@@ -66,5 +66,5 @@ result = generator.generate(
     extra='患者姓名可以是随机的，尽量使用比较生僻的人名。账单总费用符合正态分布的正数，保险索赔金额最大不能超过总账单费用的70%。', # 和input_variables 中的extra 保持一致，额外的指导信息
     runs=10  # 指定的生成数据数量
 )
-
+# 生成结构化的数据，很容易处理和存储到数据库中
 print(result)
