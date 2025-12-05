@@ -22,8 +22,8 @@ loader = WebBaseLoader(web_paths=['https://blog.csdn.net/2301_82275412/article/d
 docs = loader.load()  # 得到整篇文字
 # Map-reduce
 # 第一步：切割阶段，每个小的docs 为800个token，重复为0
-text_splitter =  RecursiveCharacterTextSplitter(chunk_size=3000, chunk_overlap=0)
-split_docs= text_splitter.split_documents(docs)
+text_splitter = RecursiveCharacterTextSplitter(chunk_size=3000, chunk_overlap=0)
+split_docs = text_splitter.split_documents(docs)
 # 第二步: Map 阶段
 map_template = """以下是一组文档(documents)
 "{docs}"
@@ -66,5 +66,5 @@ map_reduce_chain = MapReduceDocumentsChain(
 )
 
 # 第五步： 调用最终的链chain
-result=map_reduce_chain.invoke(split_docs)
+result = map_reduce_chain.invoke(split_docs)
 print(result)
